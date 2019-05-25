@@ -7,8 +7,8 @@
 #include <sys/wait.h>
 #include <pwd.h>
 
-#define MAX_LEN_LINE    10
 #define LEN_HOSTNAME    30
+#define MAX_LEN_LINE    10
 
 int main(void)
 {
