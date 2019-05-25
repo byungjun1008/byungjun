@@ -43,7 +43,7 @@ int main(void)
         }
         
         printf("[%s]\n", command);
-        p = strtok_k(command,";");
+        p = strtok(command,";");
         while(p){
         pid = fork();
         if (pid < 0) {
@@ -61,13 +61,14 @@ int main(void)
             }
         }
         else {  /* child */
+            args[0]=p;
             ret = execve(args[0], args, NULL);
             if (ret < 0) {
                 fprintf(stderr, "execve failed\n");   
                 return 1;
             }
         }
-        p=strtok_k(NULL,";");
+        p=strtok(NULL,";");
     }
     return 0;
 }
